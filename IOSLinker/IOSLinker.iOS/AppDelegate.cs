@@ -41,9 +41,9 @@ namespace IOSLinker.iOS
                 }
             }
 
-            Debug.WriteLine("after calling LoadLibrary");
             if (foundAssembly == null)
             {
+                Debug.WriteLine("ExternalLibrary not loaded into the app domain");
                 Assembly.Load("ExternalLibrary");
                 foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
                 {
